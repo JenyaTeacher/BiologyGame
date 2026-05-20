@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<title>Swamp Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <div id="hud">
+    <div>
+      <div class="label">🌿 SWAMP</div>
+      <div class="hint">Рух = автострибок!</div>
+    </div>
+    <div style="text-align:center">
+      <div class="label">Очки</div>
+      <div class="score-val" id="scoreVal">0</div>
+    </div>
+    <div class="record-row">
+      <div class="record-label">🏆 РЕКОРД</div>
+      <div class="record-val" id="recordVal">0</div>
+    </div>
+  </div>
+
+  <div id="viewport">
+    <div id="world">
+      <div id="player">
+        <img id="playerImg" src="1.png" alt="" onerror="this.style.display='none';document.getElementById('playerFallback').style.display='flex'">
+        <span id="playerFallback" style="display:none;font-size:36px;line-height:1;">🐸</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="controls">
+    <button ontouchstart="startMove(-1)" ontouchend="stopMove()" onmousedown="startMove(-1)" onmouseup="stopMove()">⬅</button>
+    <button ontouchstart="startMove(1)"  ontouchend="stopMove()" onmousedown="startMove(1)"  onmouseup="stopMove()">➡</button>
+  </div>
+
+  <div class="overlay" id="startScreen">
+    <h1>🌿 SWAMP<br>СТРИБКИ</h1>
+    <p>Стрибай по листях, збирай квіти<br>Не впади у болото!</p>
+    <button class="btn" onclick="startGame()">ПОЧАТИ ГРУ</button>
+  </div>
+
+  <div class="overlay" id="gameOverScreen" style="display:none">
+    <h1 style="color:var(--danger);text-shadow:0 0 20px #ff4444aa">💀 ПОТОНУВ</h1>
+    <div class="big-score" id="goScore">0</div>
+    <div class="sub">квіток зібрано</div>
+    <div class="new-record" id="newRecordBadge">🏆 НОВИЙ РЕКОРД!</div>
+    <p style="margin-top:4px">Рекорд: <span id="goRecord" style="color:var(--gold)">0</span></p>
+    <table class="top-list" id="topList"></table>
+    <button class="btn danger" style="margin-top:6px" onclick="startGame()">ЩЕ РАЗ</button>
+  </div>
+
+</div>
+
+
+<script src="script.js">
+// ─── CONSTANTS ────────────────────────────────────────────────────────────
+
+</script>
+</body>
+</html>
